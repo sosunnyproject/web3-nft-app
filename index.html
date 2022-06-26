@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body {
+		background-color: #787878;
+		text-align: center;
+		color: white;
+	}
+	.nav {
+		height:70px;
+		background-color:#222;
+	}
+	.section-wide {
+		height: 860px;
+		background-color: #aaa;
+		display: flex;
+	}
+		.section-split-text{
+			width: 50%;
+			max-width: 860px;
+			padding: 100px;
+			font-size: 42px;
+		}
+		.section-split-slider{
+			width: 50%;
+			max-width: 860px;
+		}
+	.section-slider{
+		display: flex;
+	}
+	.section-slider:nth-child(n){
+		height: 340px;
+		background-color: #888;
+		margin-top: 200px; margin-bottom: 200px;
+	}
+	.section-sliders-wrapper .section-slider:not(:first-child):not(:last-child){
+		margin-top:150px;margin-bottom:150px;
+	}
+	.section-slider:first-child{
+		margin-top:200px;margin-bottom:150px;
+	}
+	.section-slider:last-child{
+		margin-top:150px;margin-bottom:200px;
+	}
+		.slider-intro{
+			min-width: 200px;
+			height: 100%;
+		  margin-left: 100px;
+			margin-right: 65px;
+		}
+		.card-h1{
+			font-size: 45px;
+			line-height: 50px;
+		}
+		.card-h2{
+			font-size: 20px;
+			line-height: 25px;
+		}
+		.slider-list{
+			display: flex;
+		}
+		.slider-thumbnail {
+			margin-right: 30px;
+			border: 1px dashed green;
+		}
+		.slider-image{
+			width: 320px;height:320px;
+		}
+			.slider-image.circle-mask {
+				border: 1px solid hotpink;
+				border-radius: 50%;
+			}
+		.slider-caption{
+			font-size: 25px;
+			line-height: 29px;
+			text-align: left;
+		}
+			.slider-caption.center{
+				text-align: center;
+			}
+	.section-grid-wrapper{
+
+	}
+	.section-grid-row{
+		height: 430px;
+		border: 1px dashed pink;
+	}
+	.section-see-more{
+		display: flex;
+		justify-content: center;
+		margin-top: 100px;
+		margin-bottom: 200px;
+	}
+	.button-see-more{
+		height: 20px;
+		width: 200px;
+		text-align: center;
+		padding: 27px;
+		border: 1px solid #30A1D2;
+		border-radius: 40px;
+		color: #30A1D2;
+		font-size: 25px;
+		line-height: 20px;
+	}
+	.section-title{
+		margin-top: 200px;
+		margin-bottom: 50px;
+	}
+	.section-vertical-cards{
+		display: flex;
+		justify-content: space-around;
+
+	}
+	.vertical-card{
+		height: 950px;
+		width: 480px;
+		border: 1px solid blue;
+	}
+	.section-ranking{
+		margin-top: 120px;
+		display: flex;
+		justify-content: space-evenly
+	}
+	.section-rank-row{
+		height: 140px;
+		border: 1px solid yellow;
+	}
+
+	.section-rank-column{
+		width: 50%;
+	}
+
+
+</style>
+<body>
+	<div id="app"></div>
+	<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<script type="text/babel">
+
+	const App = () => {
+
+		return (
+			<div>
+				<div className="nav"></div>
+				<div className="section-wide">전체 화면 슬라이드</div>
+				<div>
+					<div className="section-slider">
+						<div className="slider-intro">
+							<div className="card-h1">한국 알앤비? 여기요!</div>
+							<div className="card-h2">지금 주목해야할 멋진 아티스트들을 확인하세요.</div>
+						</div>
+						<div className="slider-list">
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+						</div>
+					</div>
+					<div className="section-slider">
+						<div className="slider-intro">
+							<div className="card-h1">한국 알앤비? 여기요!</div>
+							<div className="card-h2">지금 주목해야할 멋진 아티스트들을 확인하세요.</div>
+						</div>
+						<div className="slider-list">
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+						</div>	
+					</div>
+					<div className="section-slider">
+						<div className="slider-intro">
+							<div className="card-h1">한국 알앤비? 여기요!</div>
+							<div className="card-h2">지금 주목해야할 멋진 아티스트들을 확인하세요.</div>
+						</div>
+						<div className="slider-list">
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image"></div>	
+								<div className="slider-caption">multitude</div>	
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div className="section-wide">
+					<div className="section-split-text">새로운 국내 아티스트를 가장 먼저 만나보세요</div>
+					<div className="section-split-slider">영상 사진 슬라이드 사각형</div>	
+				</div>
+				<div className="section-slider">
+					<div className="slider-intro">
+							<div className="card-h1">해외 아티스트</div>
+							<div className="card-h2">이미지 썸네일 동그라미</div>
+						</div>
+						<div className="slider-list">
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">BBnBB</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">BlackPink</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">BTS</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">2NE1</div>	
+							</div>
+						</div>	
+				</div>
+				<div className="section-wide">
+					<div className="section-split-text">새로운 국내 아티스트를 가장 먼저 만나보세요</div>
+					<div className="section-split-slider">영상 사진 슬라이드 사각형</div>
+				</div>
+				<div className="section-slider">
+						<div className="slider-intro">
+							<div className="card-h1">해외 아티스트</div>
+							<div className="card-h2">이미지 썸네일 동그라미</div>
+						</div>
+						<div className="slider-list">
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">BBnBB</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">BlackPink</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">BTS</div>	
+							</div>
+							<div className="slider-thumbnail">
+								<div className="slider-image circle-mask"></div>	
+								<div className="slider-caption center">2NE1</div>	
+							</div>
+						</div>		
+				</div>
+				<div className="section-title">WORKLOG</div>
+				<div className="section-grid-wrapper">
+					<div className="section-grid-row"></div>
+					<div className="section-grid-row"></div>
+					<div className="section-grid-row"></div>
+					<div className="section-see-more">
+						<div className="button-see-more">See More</div>	
+					</div>
+				</div>
+				<div className="section-title">TOP COLLECTIONS</div>
+				<div className="section-vertical-cards">
+					<div className="vertical-card"></div>	
+					<div className="vertical-card"></div>	
+					<div className="vertical-card"></div>	
+				</div>
+				<div className="section-ranking">
+				  <div className="section-rank-column">
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+					</div>
+					<div className="section-rank-column">
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+						<div className="section-rank-row"></div>
+					</div>
+				</div>
+				<div className="section-see-more">
+					<div className="button-see-more">See More</div>	
+				</div>
+				<div className="section-wide">
+					<div className="section-split-text">새로운 국내 아티스트를 가장 먼저 만나보세요</div>
+					<div className="section-split-slider">영상 사진 슬라이드 사각형</div>
+				</div>
+				<div className="section-slider">
+					
+					<div className="slider-intro">
+						<div className="card-h1">NEW NFT 리스트</div>
+						<div className="card-h2">이미지 썸네일 동그라미</div>
+					</div>
+					<div className="slider-list">
+						<div className="slider-thumbnail">
+							<div className="slider-image circle-mask"></div>	
+							<div className="slider-caption center">BBnBB</div>	
+						</div>
+						<div className="slider-thumbnail">
+							<div className="slider-image circle-mask"></div>	
+							<div className="slider-caption center">BlackPink</div>	
+						</div>
+						<div className="slider-thumbnail">
+							<div className="slider-image circle-mask"></div>	
+							<div className="slider-caption center">BTS</div>	
+						</div>
+						<div className="slider-thumbnail">
+							<div className="slider-image circle-mask"></div>	
+							<div className="slider-caption center">2NE1</div>	
+						</div>
+					</div>	
+				</div>
+
+			</div>
+		)
+	}
+
+	const appDOM = document.querySelector('#app');
+
+	ReactDOM.render(<App />, appDOM)
+	</script>
+</body>
+</html>
