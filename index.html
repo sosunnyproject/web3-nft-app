@@ -87,9 +87,15 @@
 	.section-grid-wrapper{
 
 	}
-	.section-grid-row{
+	.grid-row{
+		display: flex;
 		height: 430px;
 		border: 1px dashed pink;
+	}
+	.square-post{
+		height:430px;
+		width:430px;
+		border:1px dashed darkturquoise;
 	}
 	.section-see-more{
 		display: flex;
@@ -123,15 +129,53 @@
 		border: 1px solid blue;
 	}
 	.section-ranking{
-		margin-top: 120px;
+		margin-top: 180px;
 		display: flex;
 		justify-content: space-evenly
 	}
-	.section-rank-row{
+	.rank-row{
 		height: 140px;
 		border: 1px solid yellow;
+		display:flex;
+		padding-top: 28px;
+		padding-bottom: 28px;
+		align-items: center;
+		justify-content: space-around;
 	}
+	  .rank-number {
+			display: flex;
+			align-items: center;
+			width:30px;
+			height:95px;
+			text-align:left;
+		}
+		.rank-thumbnail {
+			width: 88px;
+			height: 95px;
+			border-radius: 50%;
+			border: 1px solid hotpink;
+		}
+		.rank-wrapper-long{
+			text-align: left;
+			font-size: 26px;
+			line-height: 30px;
+			min-width: 350px;
+		}
+			.rank-title {
 
+			}
+			.rank-price {
+				font-weight: 300;
+			}
+		.rank-wrapper-short{
+		}
+			.rank-rate {
+
+			}
+			.rank-unit{
+				font-weight: 300;
+				
+			}
 	.section-rank-column{
 		width: 50%;
 	}
@@ -284,9 +328,24 @@
 				</div>
 				<div className="section-title">WORKLOG</div>
 				<div className="section-grid-wrapper">
-					<div className="section-grid-row"></div>
-					<div className="section-grid-row"></div>
-					<div className="section-grid-row"></div>
+					<div className="grid-row">
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+					</div>
+					<div className="grid-row">
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+					</div>
+					<div className="grid-row">
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+						<div className="square-post"></div>
+					</div>
 					<div className="section-see-more">
 						<div className="button-see-more">See More</div>	
 					</div>
@@ -299,18 +358,29 @@
 				</div>
 				<div className="section-ranking">
 				  <div className="section-rank-column">
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
+						<div className="rank-row">
+							<div className="rank-number">1</div>
+							<div className="rank-thumbnail"></div>
+							<div className="rank-wrapper-long">
+								<div className="rank-title">BLACKPINK</div>
+								<div className="rank-price">Floor Price 0.35ETH</div>
+							</div>
+							<div className="rank-wrapper-short">
+								<div className="rank-rate">+ 98%</div>
+								<div className="rank-unit">ETH</div>
+							</div>
+						</div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
 					</div>
 					<div className="section-rank-column">
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
-						<div className="section-rank-row"></div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
+						<div className="rank-row"></div>
 					</div>
 				</div>
 				<div className="section-see-more">
