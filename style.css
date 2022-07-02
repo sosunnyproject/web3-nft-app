@@ -1,0 +1,325 @@
+body {
+	background-color: #383838;
+	text-align: center;
+	color: white;
+	overflow-x: hidden;
+}
+.nav {
+	height:70px;
+	background-color:#2E2E2C;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* margin-left: 50px; */
+	/* margin-right: 50px; */
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.nav img {
+	height: 36px;
+}
+.menus-wrapper {
+  display: flex;
+}
+.menu{
+	margin-right: 45px;
+	font-family: roboto;
+	font-size: 25px;
+	line-height: 29px;
+	letter-spacing: -0.01em;
+}
+.footer {
+	background-color: #2E2D2C;
+	height: 300px;
+	padding-left: 150px;
+	padding-right: 150px;
+	margin-top: 150px;
+}
+.footer-copyright{
+	font-weight: 300;
+	font-size: 25px;
+	line-height:  29px;
+}
+.section-wide {
+	height: 860px;
+	background-color: #aaa;
+	display: flex;
+}
+	.half-text{
+		width: 50%;
+		width: 860px;
+		padding: 100px;
+		font-size: 42px;
+		word-wrap: break-word;
+	}
+	.half-text-wrapper {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+		.left-top-sub{
+			font-size: 24px;
+			line-height: 28px;
+			margin-bottom: 20px;
+			text-align: left;
+		}
+		.left-top {
+			font-size: 42px;
+			line-height: 55px;
+			max-width: 55%;   /** 최대 넓이 정하기 **/
+			text-align: left;
+		}
+		.right-bottom{
+			font-size: 42px;
+			line-height: 55px;
+			text-align: right;
+			margin-bottom: 10px;  /** margin left-top-sub 이랑 맞추기 **/
+		}
+		.right-bottom-sub{
+			font-size: 24px;
+			line-height: 28px;
+			text-align: right;
+		}
+	.half-slider{
+		width: 50vw;
+		max-width: 860px;
+	}
+	.half-slider img{
+		height: 860px;
+		width: 860px;
+		object-fit: contain;
+		object-position: center;
+	}
+.section-slider{
+	display: flex;
+}
+.section-slider:nth-child(n){
+	height: 340px;
+	background-color: #888;
+	margin-top: 200px; 
+	margin-bottom: 200px;
+}
+.section-sliders-wrapper .section-slider:not(:first-child):not(:last-child){
+	margin-top:150px;margin-bottom:150px;
+}
+.section-slider:first-child{
+	margin-top:200px;margin-bottom:150px;
+}
+.section-slider:last-child{
+	margin-top:150px;margin-bottom:200px;
+}
+	.slider-intro{
+		min-width: 200px;
+		width: 220px;
+		height: 100%;
+		margin-left: 100px;
+		margin-right: 65px;
+	}
+	.intro-h1{
+		font-size: 45px;
+		line-height: 50px;
+		margin-top: 5px;
+	}
+	.intro-h2{
+		font-size: 20px;
+		line-height: 25px;
+		margin-top: 20px;
+	}
+	.swipe-wrapper{
+		display: flex;
+		overflow: visible;
+	}
+	.slider-thumbnail {
+		margin-right: 30px;
+		border: 1px dashed green;
+	}
+	.slider-image{
+		width: 320px;
+		height:320px;
+	}
+	.slider-image:hover {
+		transform: scale(1.25);
+		transition: all 300ms ease-in-out;
+		transition-delay: 300ms;
+		z-index: 1;
+	}
+	.slider-image img{
+		cursor: grab;
+	}
+	.slider-image img:active {
+		cursor: grabbing;
+	}
+	.slider-image:hover img{
+		transition-delay: 300ms;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+	}
+	img.circle-mask {
+		object-fit: cover;
+		border: 1px solid hotpink;
+		border-radius: 50%;
+	}
+	img.small-circle-mask {
+		width: 94px;
+		height: 94px;
+		object-fit: cover;
+		border: 1px solid hotpink;
+		border-radius: 50%;
+	}
+	.slider-caption{
+		margin-top: 15px;
+		font-size: 25px;
+		line-height: 29px;
+		text-align: left;
+	}
+		.slider-caption.center{
+			text-align: center;
+		}
+.section-grid-wrapper{
+
+}
+.grid-row{
+	display: flex;
+	border: 1px dashed pink;
+}
+.square-post{
+	height:25vw;
+	width:25vw;
+	border:1px dashed darkturquoise;
+}
+.square-post img{
+	object-fit: fill;
+	height: 100%;
+}
+.section-see-more{
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+	margin-bottom: 200px;
+}
+.button-see-more{
+	height: 20px;
+	width: 200px;
+	text-align: center;
+	padding: 27px;
+	border: 1px solid #30A1D2;
+	border-radius: 40px;
+	color: #30A1D2;
+	font-size: 25px;
+	line-height: 20px;
+}
+.section-title{
+	margin-top: 200px;
+	margin-bottom: 50px;
+	font-family: 'Roboto';
+	font-size: 25px;
+}
+.section-vertical-cards{
+	display: flex;
+	justify-content: space-around;
+
+}
+.vertical-card{
+	height: 950px;
+	width: 480px;
+	border: 1px solid blue;
+}
+.section-ranking{
+	margin-top: 180px;
+	display: flex;
+	justify-content: space-evenly
+}
+.rank-row{
+	height: 90px;
+	margin-left: 120px;
+	margin-right: 120px;
+	/* border: 1px dashed yellow; */
+	display:flex;
+	margin-top: 28px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid #8F8F8F;
+	align-items: center;
+	justify-content: space-around;
+}
+	.rank-number {
+		display: flex;
+		align-items: center;
+		width:30px;
+		height:95px;
+		text-align:left;
+	}
+	.rank-thumbnail {
+		width: 88px;
+		height: 95px;
+		border-radius: 50%;
+		border: 1px solid hotpink;
+	}
+	.rank-wrapper-long{
+		text-align: left;
+		font-size: 26px;
+		line-height: 30px;
+		min-width: 350px;
+	}
+		.rank-title {
+
+		}
+		.rank-price {
+			font-weight: 300;
+		}
+	.rank-wrapper-short{
+	}
+		.rank-rate {
+
+		}
+		.rank-unit{
+			font-weight: 300;
+			
+		}
+.section-rank-column{
+	width: 50%;
+}
+
+.nft-cards-row{
+	display: flex;
+	justify-content: space-evenly;
+}
+.nft-card{
+	height: 670px;
+	width: 460px;
+	background-color: #fff;
+}
+
+.nft-card img{
+	width: 460px;
+	height: 460px;
+	object-fit: cover;
+}
+.nft-card-text {
+}
+
+.section-categories{
+	margin-top: 130px;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.categories-row{
+	display: flex;
+  margin-bottom: 35px;
+	justify-content: space-between;
+}
+
+.category{
+	width: 260px;
+	height: 40px;
+	padding: 40px 35px;
+	margin-right: 23px;
+	border-radius: 45px;
+	border: 3px solid #30a1d2;
+	color: #30a1d2;
+	font-size: 25px;
+	line-height: 40px;
+	font-family: Roboto;
+	text-align: center;
+	word-wrap: break-word;
+}
