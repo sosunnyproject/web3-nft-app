@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <body>
 	<div id="app"></div>
@@ -20,129 +23,95 @@
 		return (
 			<div className="nav">
 			  <img src="./static/widtown-logo.svg"></img>
-				<div className="menus-wrapper">
-				  <div className="menu">ARTISTS</div>
-					<div className="menu">WORKLOG</div>
-					<div className="menu">NFT</div>
+				<div className="headerMenu-wrapper">
+				  <div className="headerMenu">ARTISTS</div>
+					<div className="headerMenu">WORKLOG</div>
+					<div className="headerMenu">NFT</div>
 				</div>
 			  <img src="./static/user-logo.svg"></img>
 			</div>
 		)
 	}
 
-	const WideSlide = ({ img }) => {
+	const WideSlide = ({ img, title, subtitle }) => {
 		return(
-			<div className="section-wide">
+			<div className="full-slide">
 				<img src={img} alt="wide slide image" width="100%" />	
+				<div className="mainSlideText">
+					<div className="mainSlide">{title}</div>
+					<div className="mainSlideDetail">{subtitle}</div>
+				</div>
 			</div>
 		)
 	}
 
-	const SlideImage = ({ imageShape }) => {
+	const SlideImage = ({ type, img }) => {
 
 		const squareImage = (
 			<div className="slider-image">
-				<img src="./static/sample1.png" alt="square slide"></img>
+				<img src={img} alt="square slide"></img>
 			</div>	
 		)
 
 		const circleImage = (
 			<div className="slider-image">
-				<img className="circle-mask" src="./static/sample2.png" alt="circle slide"></img>	
+				<img className="circle-mask" src={img} alt="circle slide"></img>	
 			</div>	
 		)
 
 		return(
 			<div>
-			  {imageShape == "circle" ? circleImage : squareImage}
+			  {type == "circle" ? circleImage : squareImage}
 			</div>
 		)
 	}
 
-	const SlideThumbnail = ({ imageShape }) => {
+	const SlideCaption = ({ type }) => {
+
+		const leftCaption = (
+			<div className="smallTitle">multitude</div>	
+		)
+
+		const centerCaption = (
+			<div className="smallTitle center">multitude</div>	
+		)
+
+		return(
+			<div>
+				{type == "circle" ? centerCaption : leftCaption}
+			</div>
+		)
+	}
+
+	const SlideThumbnail = ({ imageShape, img, caption }) => {
 		return (
 			<div className="slider-thumbnail">
-				<SlideImage imageShape={imageShape}/>
-				<div className="slider-caption center">multitude</div>	
+				<SlideImage type={imageShape} img={img}/>
+				<SlideCaption type={imageShape}>{caption}</SlideCaption>
 			</div>
 		)
 	}
 
-	const SliderIntro = ({ children }) => {
+	const SliderIntro = ({ title, subtitle }) => {
 		return(
 			<div className="slider-intro">
-				<div className="intro-h1">{children}</div>
-				<div className="intro-h2">지금 주목해야할 멋진 아티스트들을 확인하세요.</div>
+				<div className="intro-h1 largeTitle">{title}</div>
+				<div className="intro-h2 xsDetail">{subtitle}</div>
 			</div>
 		)
 	}
 
-	const SectionSlider = ({ children, imageShape }) => {
-
-		const swiper = new Swiper(".swipe-container", {
-			slidesPerView: 2,
-			slidesPerGroup: 1,
-			centeredSlides: true,
-			loop: true,
-			// navigation: {
-			// 			nextEl: '.swiper-button-next',
-			// 			prevEl: '.swiper-button-prev',
-			// 		},
-			breakpoints: {
-				// when window width is >= 600px
-				600: {
-					slidesPerView: 2,
-					slidesPerGroup: 2,
-					spaceBetween: 5,
-					centeredSlides: true
-					
-				},
-				// when window width is >= 900px
-				900: {
-					slidesPerView: 3,
-					slidesPerGroup: 3,
-					spaceBetween: 5,
-					centeredSlides: false
-					
-				},
-				// when window width is >= 1200px
-				1200: {
-					slidesPerView: 4,
-					slidesPerGroup: 4,
-					spaceBetween: 5,
-					centeredSlides: false
-				},
-				
-				// when window width is >= 1500px
-				1500: {
-					slidesPerView: 5,
-					slidesPerGroup: 5,
-					spaceBetween: 5,
-					centeredSlides: false
-				},
-				
-				// when window width is >= 1800px
-				1800: {
-					slidesPerView: 6,
-					slidesPerGroup: 6,
-					spaceBetween: 5,
-					centeredSlides: false
-				}
-			}
-		});
-
+	const SectionSlider = ({ children, imageShape, title, subtitle }) => {
 
 		return(
 			<div className="section-slider">
-				<SliderIntro>{children}</SliderIntro>
+				<SliderIntro title={title} subtitle={subtitle}></SliderIntro>
 				<div className="swipe-container">
 					<div className="swipe-wrapper">
-						<SlideThumbnail imageShape={imageShape} />
-						<SlideThumbnail imageShape={imageShape} />
-						<SlideThumbnail imageShape={imageShape} />
-						<SlideThumbnail imageShape={imageShape} />
-						<SlideThumbnail imageShape={imageShape} />
-						<SlideThumbnail imageShape={imageShape} />
+						<SlideThumbnail imageShape={imageShape} img="./static/sample1.png" caption="slide1" />
+						<SlideThumbnail imageShape={imageShape} img="./static/sample1.png" caption="slide2" />
+						<SlideThumbnail imageShape={imageShape} img="./static/sample1.png" caption="slide3" />
+						<SlideThumbnail imageShape={imageShape} img="./static/sample1.png" caption="slide4" />
 					</div>
 				</div>
 			</div>
@@ -152,17 +121,17 @@
 	const SectionSplit = () => {
 
 		return(
-			<div className="section-wide">
+			<div className="section-split">
 				<div className="half-text">
 					<div className="half-text-wrapper">
 						<div>
-							<div className="left-top-sub">NEW ARTIST</div>
-							<div className="left-top">새로운 해외 아티스트를 먼저 만나보세요</div>
+							<div className="left-top-sub mainBannerCtgTitle">NEW ARTIST</div>
+							<div className="left-top mainBanner">새로운 해외 아티스트를 먼저 만나보세요</div>
 						</div>
 
 						<div>
-							<div className="right-bottom">bbno$</div>
-							<div className="right-bottom-sub">42만 건의 틱톡 콘텐츠가 바이럴되며 엄청난 사랑을 받은 Lalal의 주인공 bbno$</div>
+							<div className="right-bottom mainBanner">bbno$</div>
+							<div className="right-bottom-sub smallDetail">42만 건의 틱톡 콘텐츠가 바이럴되며 엄청난 사랑을 받은 Lalal의 주인공 bbno$</div>
 						</div>
 					</div>
 					</div>
@@ -225,8 +194,6 @@
 		)
 	}
 
-
-
 	const SectionSeeMore = () => {
 		return(
 			<div className="section-see-more">
@@ -235,9 +202,28 @@
 		)
 	}
 
+	const VerticalItem = () => {
+
+		return(
+			<div className="vertical-card">
+				<img className="vertical-bg-img" src="./static/vertical.jpg"></img>
+			  <div className="vertical-bg"></div>
+
+				<img className="vertical-image" src="./static/vertical.jpg"></img>
+				<div className="vertical-desc">
+					<div className="midTitle">한국 알앤비를 상징하는 음악 레이블</div>
+					<div className="textSmall">
+						올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다.	
+					</div>
+				</div>
+				<div className="vertical-number">3</div>
+			</div>	
+		)
+	}
+
 	const SectionTitle = ({ children }) => {
 		return(
-			<div className="section-title">{children}</div>
+			<div className="section-title midTitle">{children}</div>
 
 		)
 	}
@@ -247,9 +233,9 @@
 		return(
 		  <div className="nav footer">
 		    <img src="./static/widtown-logo.svg"></img>
-				<div className="menus-wrapper">
-					<div className="menu">COMMUNITY</div>
-					<div className="menu">COMPANY</div>
+				<div className="headerMenu-wrapper">
+					<div className="headerMenu">COMMUNITY</div>
+					<div className="headerMenu">COMPANY</div>
 				</div>	
 				<div className="footer-copyright">midtown, Inc.2022 </div>
 			</div>
@@ -263,16 +249,16 @@
 
 		return(
 			<div>
-			<WideSlide img={staticWide}></WideSlide>
-				<SectionSlider imageShape="square">한국 알앤비? 여기요!</SectionSlider>
-				<SectionSlider imageShape="square">New Release #85</SectionSlider>
-				<SectionSlider imageShape="square">한국 힙합 이즈 고</SectionSlider>
+			<WideSlide img={staticWide} title="기하학 가면을 쓴 현대인의 자화상 아티스트 이보영" subtitle="2023.03.04 오픈"></WideSlide>
+				<SectionSlider imageShape="square" title="한국 알앤비? 여기요" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SectionSlider>
+				<SectionSlider imageShape="square" title="New Release #85" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SectionSlider>
+				<SectionSlider imageShape="square" title="한국 힙합 이즈 고" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SectionSlider>
 
 				<SectionSplit />
 				
-				<SectionSlider imageShape="circle">국내 아티스트</SectionSlider>
+				<SectionSlider imageShape="circle" title="국내 아티스트" subtitle="sub sub sub"></SectionSlider>
 				<SectionSplit />
-				<SectionSlider imageShape="circle">해외 아티스트</SectionSlider>
+				<SectionSlider imageShape="circle" title="해외 아티스트" subtitle="sub sub sub"></SectionSlider>
 
 				<SectionTitle>WORKLOG</SectionTitle>
 				<div className="section-grid-wrapper">
@@ -284,9 +270,27 @@
 
 				<SectionTitle>TOP COLLECTIONS</SectionTitle>
 				<div className="section-vertical-cards">
-					<div className="vertical-card"></div>	
-					<div className="vertical-card"></div>	
-					<div className="vertical-card"></div>	
+					<VerticalItem 
+						title="한국 알앤비를 상징하는 음악 레이블" 
+						subtitle="올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다." 
+						floorprice="0.35" 
+						price="0.35" 
+						percentage="100"
+					/>
+					<VerticalItem 
+						title="한국 알앤비를 상징하는 음악 레이블" 
+						subtitle="올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다." 
+						floorprice="0.35" 
+						price="0.35" 
+						percentage="100"
+					/>
+					<VerticalItem 
+						title="한국 알앤비를 상징하는 음악 레이블" 
+						subtitle="올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다." 
+						floorprice="0.35" 
+						price="0.35" 
+						percentage="100"
+					/>
 				</div>
 				<div className="section-ranking">
 				  <RankColumn></RankColumn>
@@ -296,7 +300,7 @@
 
 				<SectionSplit />
 
-				<SectionSlider imageShape="circle">NEW NFT LIST</SectionSlider>
+				<SectionSlider imageShape="circle" title="NEW NFT LIST" subtitle="금주의 새로운 NFT"></SectionSlider>
 			</div>
 		)
 	}
@@ -381,7 +385,7 @@
 			<div>
 				<HeadNav />
 				
-				<NftMain />
+				<Home />
 				<Footer />
 			</div>
 		)

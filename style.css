@@ -3,6 +3,20 @@ body {
 	text-align: center;
 	color: white;
 	overflow-x: hidden;
+	font-family: 'Roboto', 'Noto Sans KR';
+}
+@font-face{
+	font-family: 'Roboto';
+	src: local('Roboto');	
+	font-style: normal;
+	font-weight: 500;
+	unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+@font-face{
+	font-family: 'Noto Sans KR';
+	src: local('Noto Sans KR');
+	font-weight: 500;
+	unicode-range: U+AC00-D7A3;
 }
 .nav {
 	height:70px;
@@ -18,12 +32,11 @@ body {
 .nav img {
 	height: 36px;
 }
-.menus-wrapper {
+.headerMenu-wrapper {
   display: flex;
 }
-.menu{
+.headerMenu{
 	margin-right: 45px;
-	font-family: roboto;
 	font-size: 25px;
 	line-height: 29px;
 	letter-spacing: -0.01em;
@@ -40,10 +53,31 @@ body {
 	font-size: 25px;
 	line-height:  29px;
 }
-.section-wide {
+.section-split {
 	height: 860px;
 	background-color: #aaa;
 	display: flex;
+}
+.full-slide{
+	height: 860px;
+	position: relative;
+}
+.mainSlideText {
+	text-align: left;
+	max-width: 40%;
+	position: absolute;
+	top: 470px;
+	left: 150px;
+}
+.mainSlide{
+	font-size: 53px;
+	line-height: 70px;
+	letter-spacing: -8%;
+}
+.mainSlideDetail{
+  font-size: 26px;
+	margin-top: 20px;
+	letter-spacing: -8%;
 }
 	.half-text{
 		width: 50%;
@@ -59,27 +93,35 @@ body {
 		justify-content: space-between;
 	}
 		.left-top-sub{
-			font-size: 24px;
-			line-height: 28px;
 			margin-bottom: 20px;
 			text-align: left;
 		}
 		.left-top {
-			font-size: 42px;
-			line-height: 55px;
-			max-width: 55%;   /** 최대 넓이 정하기 **/
+			max-width: 70%;   /** 최대 넓이 정하기 **/
 			text-align: left;
 		}
 		.right-bottom{
-			font-size: 42px;
-			line-height: 55px;
 			text-align: right;
 			margin-bottom: 10px;  /** margin left-top-sub 이랑 맞추기 **/
 		}
 		.right-bottom-sub{
+		}
+		.mainBannerCtgTitle {
 			font-size: 24px;
+			letter-spacing: -2%;
 			line-height: 28px;
+		}
+		.mainBanner {
+			font-size: 42px;
+			line-height: 55px;
+			letter-spacing: -8%;
+		}
+		.smallDetail {
+			font-weight: 300;
+			font-size: 25px;
+			letter-spacing: -8%;
 			text-align: right;
+
 		}
 	.half-slider{
 		width: 50vw;
@@ -96,7 +138,6 @@ body {
 }
 .section-slider:nth-child(n){
 	height: 340px;
-	background-color: #888;
 	margin-top: 200px; 
 	margin-bottom: 200px;
 }
@@ -110,21 +151,26 @@ body {
 	margin-top:150px;margin-bottom:200px;
 }
 	.slider-intro{
-		min-width: 200px;
-		width: 220px;
+		max-width: 257px;
 		height: 100%;
 		margin-left: 100px;
-		margin-right: 65px;
+		margin-right: 25px;
 	}
 	.intro-h1{
-		font-size: 45px;
-		line-height: 50px;
 		margin-top: 5px;
 	}
 	.intro-h2{
-		font-size: 20px;
-		line-height: 25px;
 		margin-top: 20px;
+	}
+	.largeTitle{
+		font-size: 50px;
+		line-height: 60px;
+		letter-spacing: -8%;
+		text-align: left;
+	}
+	.xsDetail {
+		font-size: 20px;
+		text-align: left;
 	}
 	.swipe-wrapper{
 		display: flex;
@@ -166,15 +212,15 @@ body {
 		border: 1px solid hotpink;
 		border-radius: 50%;
 	}
-	.slider-caption{
+	.smallTitle{
 		margin-top: 15px;
 		font-size: 25px;
 		line-height: 29px;
 		text-align: left;
 	}
-		.slider-caption.center{
-			text-align: center;
-		}
+	.center{
+		text-align: center;
+	}
 .section-grid-wrapper{
 
 }
@@ -211,8 +257,9 @@ body {
 .section-title{
 	margin-top: 200px;
 	margin-bottom: 50px;
-	font-family: 'Roboto';
-	font-size: 25px;
+}
+.midTitle {
+	font-size: 30px;
 }
 .section-vertical-cards{
 	display: flex;
@@ -220,9 +267,58 @@ body {
 
 }
 .vertical-card{
-	height: 950px;
-	width: 480px;
-	border: 1px solid blue;
+	height: 910px;
+	width: 440px;
+	padding: 20px;
+	position: relative;
+}
+.vertical-img{
+	width: 440px;
+	height: 550px;
+}
+.vertical-bg {
+	background-color: #000;
+	opacity: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+.vertical-bg-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+}
+.vertical-image{
+  z-index: 1;
+}
+.vertical-desc{
+  margin-top: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+}
+.vertical-number {
+	font-family: 'Oswald';
+	position: absolute;
+	left: 30px;
+	bottom: -100px;
+	font-size: 220px;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: #30a1d2;
+}
+.textSmall {
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: -8%;
+	margin-top: 8px;
 }
 .section-ranking{
 	margin-top: 180px;
@@ -319,7 +415,6 @@ body {
 	color: #30a1d2;
 	font-size: 25px;
 	line-height: 40px;
-	font-family: Roboto;
 	text-align: center;
 	word-wrap: break-word;
 }
