@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFT Web 3 Test</title>
+</head>
+<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+
+<body>
+  <button id="connectButton">connect to MetasMask Wallet</button>
+  <div id="account"></div>
+  <div id="accountList"></div>
+</body>
+<script type="module">
+  const provider = await detectEthereumProvider()
+
+  if (provider) {
+    console.log(provider === window.ethereum)
+    // handle provider
+  } else {
+    // handle no provider
+  }
+  const ethereum = window.ethereum
+  const isMetamask = ethereum.isMetaMask
+  console.log(ethereum.networkVersion) // '1' if Ethereum Main Network (Mainnet)
+  console.log(ethereum.selectedAddress) // returns null for now
+  ethereum.on('connect', (connectInfo) => console.log(connectInfo)); // returns >>> chainId: "0x1" 
+
+  let currentAccount = null;
+  const connectBtn = document.getElementById('connectButton');
+  connectBtn.addEventListener('click', getAccount)
+  const showAccount = document.getElementById('account')
+  const accountList = document.getElementById('accountList')
+  
+  ethereum
+  .request({ method: 'eth_accounts' })
+  .then(handleAccountsChanged)
+  .catch((err) => {
+    // Some unexpected error.
+    // For backwards compatibility reasons, if no accounts are available,
+    // eth_accounts will return an empty array.
+    console.error(err);
+  });
+
+  function handleAccountsChanged(accounts) {
+  if (accounts.length === 0) {
+    console.log("length of account:" + accounts.length)
+    // MetaMask is locked or the user has not connected any accounts
+    console.log('no accounts found. Please connect to MetaMask.');
+  } else if (accounts[0] !== currentAccount) {
+    currentAccount = accounts[0];
+    // Do any other work!
+  }
+}
+
+  async function getAccount() {
+    try {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const account = await accounts[0];
+      handleAccountsChanged(accounts)
+      showAccount.innerHTML = account;
+      
+      let list = await ethereum.request({ method: 'eth_accounts' });
+      console.log("array: ", list)
+      accountList.innerHTML = list
+
+    } catch (err) {
+      if (err.code === 4001) {
+          // EIP-1193 userRejectedRequest error
+          // If this happens, the user rejected the connection request.
+          console.log('Please connect to MetaMask.');
+        } else {
+          console.error(err);
+        }
+    }
+
+  }
+
+</script>
+</html>
