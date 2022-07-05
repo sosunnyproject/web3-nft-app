@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import styles from '../styles/style.module.css'
 import HeadNav from '../components/nav';
 import FullSlide from '../components/fullSlide';
 import SwiperSlider from '../components/swiper/swiperSlider';
 import Footer from '../components/footer';
 import { GridRow } from '../components/worklog/gridRow';
-import styles from '../styles/style.module.css'
 import { SectionTitle } from '../components/sectionTitle';
 import { VerticalItem } from '../components/verticalItem';
 import { SectionSplit } from '../components/sectionSplit';
@@ -26,20 +26,20 @@ export default function Home() {
 			<FullSlide 
 			  img="/static/wide1.png"
 				title="기하학 가면을 쓴 현대인의 자화상 아티스트 이보영" 
-				subtitle="2023.03.04 오픈"
+				subtitle="아티스트 이보영"
 			>
 			</FullSlide>
 
-			<SwiperSlider imageShape="square" title="New Release #11" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
-			<SwiperSlider imageShape="square" title="New Release #22" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
-			<SwiperSlider imageShape="square" title="Korean Hiphop #33" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
+			<SwiperSlider imageShape="square" title="New Release" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
+			<SwiperSlider imageShape="square" title="New Release" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
+			<SwiperSlider imageShape="square" title="Korean Hiphop" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
 
       <SectionSplit />
 				
       <SwiperSlider imageShape="circle" title="KOREAN ARTISTS" subtitle="sub sub sub"></SwiperSlider>
       <SectionSplit />
       
-      <SwiperSlider imageShape="circle" title="INTERNATIONAL ARTISTS" subtitle="sub sub sub"></SwiperSlider>
+      <SwiperSlider imageShape="circle" title="INTER NATIONAL" subtitle="sub sub sub"></SwiperSlider>
 
       <div className={styles.section_grid_wrapper}>
         <SectionTitle>WORKLOG</SectionTitle>

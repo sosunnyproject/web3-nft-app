@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/style.module.css'
+import { SeeMore } from '../seeMore'
 
 const SlideImage = ({ type, img }) => {
 
@@ -55,6 +56,7 @@ const SliderIntro = ({ title, subtitle }) => {
 		<div className={styles.slider_intro}>
 			<div className={`${styles.intro_h1} ${styles.largeTitle}`}>{title}</div>
 			<div className={`${styles.intro_h2} ${styles.xsDetail}`}>{subtitle}</div>
+			<SeeMore />
 		</div>
 	)
 }

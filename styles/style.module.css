@@ -47,9 +47,9 @@
 }
 .mainSlideText {
 	text-align: left;
-	max-width: 40%;
+	max-width: 60%;
 	position: absolute;
-	top: 470px;
+	top: 450px;
 	left: 150px;
 }
 .mainSlide{
@@ -118,6 +118,7 @@
 	}
 .section_slider{
 	display: flex;
+	height: 360px;
 }
 .section_slider:nth-child(n){
 	margin-top: 200px; 
@@ -226,10 +227,10 @@
 	margin-bottom: 200px;
 }
 .button_see_more{
-	height: 20px;
-	width: 200px;
+	height: 65px;
+	width: 250px;
 	text-align: center;
-	padding: 27px;
+	padding: 20px;
 	border: 1px solid #30A1D2;
 	border-radius: 40px;
 	color: #30A1D2;
@@ -307,8 +308,8 @@
 }
 .rank_row{
 	height: 90px;
-	margin-left: 120px;
-	margin-right: 120px;
+	margin-left: 64px;
+	margin-right: 64px;
 	/* border: 1px dashed yellow; */
 	display:flex;
 	margin-top: 28px;
