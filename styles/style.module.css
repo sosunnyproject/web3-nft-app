@@ -14,6 +14,9 @@
 	height: 36px;
 	cursor: pointer;
 }
+.nav #user_icon{
+	all: unset;
+}
 .headerMenu_wrapper {
   display: flex;
 }
