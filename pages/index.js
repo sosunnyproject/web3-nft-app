@@ -2,7 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import HeadNav from '../components/nav';
 import FullSlide from '../components/fullSlide';
-import SwiperSlider from '../components/swiperSlider';
+import SwiperSlider from '../components/swiper/swiperSlider';
+import Footer from '../components/footer';
+import { GridRow } from '../components/worklog/gridRow';
+import styles from '../styles/style.module.css'
+import { SectionTitle } from '../components/sectionTitle';
+import { VerticalItem } from '../components/verticalItem';
+import { SectionSplit } from '../components/sectionSplit';
+import { RankColumn } from '../components/ranking/rankColumn';
+import { SeeMore } from '../components/seeMore';
 
 export default function Home() {
   return (
@@ -22,10 +30,66 @@ export default function Home() {
 			>
 			</FullSlide>
 
-			<SwiperSlider imageShape="square" title="한국 알앤비? 여기요" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
-			<SwiperSlider imageShape="square" title="New Release #85" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
-			<SwiperSlider imageShape="square" title="한국 힙합 이즈 고" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
+			<SwiperSlider imageShape="square" title="New Release #11" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
+			<SwiperSlider imageShape="square" title="New Release #22" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
+			<SwiperSlider imageShape="square" title="Korean Hiphop #33" subtitle="지금 주목해야할 멋진 아티스트들을 확인하세요."></SwiperSlider>
 
+      <SectionSplit />
+				
+      <SwiperSlider imageShape="circle" title="KOREAN ARTISTS" subtitle="sub sub sub"></SwiperSlider>
+      <SectionSplit />
+      
+      <SwiperSlider imageShape="circle" title="INTERNATIONAL ARTISTS" subtitle="sub sub sub"></SwiperSlider>
+
+      <div className={styles.section_grid_wrapper}>
+        <SectionTitle>WORKLOG</SectionTitle>
+        <GridRow></GridRow>
+        <GridRow></GridRow>
+        <GridRow></GridRow>
+
+      </div>
+
+      <SectionTitle>TOP COLLECTIONS</SectionTitle>
+				<div className={styles.section_vertical_cards}>
+					<VerticalItem 
+						title="한국 알앤비를 상징하는 음악 레이블" 
+						subtitle="올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다." 
+						floorprice="0.35" 
+						price="0.35" 
+						percentage="100"
+					></VerticalItem>
+          <VerticalItem 
+						title="한국 알앤비를 상징하는 음악 레이블" 
+						subtitle="올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다." 
+						floorprice="0.35" 
+						price="0.35" 
+						percentage="100"
+					></VerticalItem>
+          <VerticalItem 
+						title="한국 알앤비를 상징하는 음악 레이블" 
+						subtitle="올해 상반기, 음악계에서 가장 눈에 띄는 지점이 있다면 앨범다운 앨범을 들고 나오며 그 어느 때보다 음악으로 정면 승부를 보고 있는 아티스트가 많다는 점이다." 
+						floorprice="0.35" 
+						price="0.35" 
+						percentage="100"
+					></VerticalItem>
+        </div>
+
+        <div className={styles.section_ranking}>
+				  <RankColumn></RankColumn>
+					<RankColumn></RankColumn>
+				</div>
+				<SeeMore />
+
+				<SectionSplit />
+
+				<SwiperSlider 
+          imageShape="circle" 
+          title="NEW NFT LIST" 
+          subtitle="금주의 새로운 NFT"
+        >
+        </SwiperSlider>
+
+      <Footer />
       {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
